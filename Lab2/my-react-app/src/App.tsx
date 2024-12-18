@@ -1,10 +1,10 @@
 const App = () => {
-  const msg = "สวัสดีดีตอนเย็น พวกเราชอบเรียนเขียนโค้ด";
+  const msg = "สวัสดีดีตอนเย็น พวกเราชอบเรียนเขียนโปรแกรม";
   const num1 = 500;
   const isTest2 = false;
   return (
     <body className="bg-blue-500 text-white p-4">
-      <h1 className="text-2xl">สวัสดีครับ ยินดีต้อนรับ</h1>
+      <h1 className="text-2xl">สวัสดีครับ ยินดีต้อนรับ เข้าสู่ Mayochiki Kub</h1>
       <p style={{ color: "Red", fontSize: "24" }}>{msg}</p>
       <p className="test1" >{((num1+3)^2)/4}</p>
 
