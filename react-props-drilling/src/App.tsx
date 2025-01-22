@@ -1,11 +1,18 @@
-import React from 'react';
+import { useState } from "react"
+import Login from "./components/Login"
+import Profile from "./components/Profile"
+import User from "./types/User"
+import './App.css'
 
-const App = () => {
+function App() {
+  const [user, setUser] = useState<User | null>(null)
+
   return (
-    <div className="bg-blue-500 text-white p-4">
-      <h1 className="text-2xl">Hello, Tailwind CSS!</h1>
+    <div>
+      <Login user={user} setUser={setUser} />
+      <Profile user={user} setUser={setUser} /> 
     </div>
-  );
-};
+  )
+}
 
-export default App;
+export default App
