@@ -1,7 +1,7 @@
 import { Star } from 'lucide-react';
 
 // TODO: Import Book Interface
-
+import Book from '../utils/Book';
 
 function Rating(rating: number) {
   return Array.from({ length: 5 }, (_, index) => (
@@ -28,18 +28,18 @@ function BookDetail({ book }: { book: Book }) {
   return (
     <div  className={`border rounded-lg p-4 m-2 shadow-md hover:shadow-xl transition-shadow w-64 flex flex-col ${getColorByRating(book.rating)}`}>
       <img
-        src="https://mp-static.se-ed.com/physical/cover/to35l6xefa680079jd4f/image/w0ibhw1u"
-        alt="ชายไร้สีกับปีแสวงบุญ"
+        src= {book.coverUrl}
+        alt={book.title}
         className="w-full h-80 object-cover rounded-t-lg mb-4"
       />
-      <h2 className="font-semibold mb-2">ชายไร้สีกับปีแสวงบุญ</h2>
-      <p className="text-gray-700 mb-1">โดย Haruki Murakami</p>
+      <h2 className="font-semibold mb-2">{book.title.length>25 ?   `${book.title.substring(0,25)}... `: book.title }</h2>
+      <p className="text-gray-700 mb-1">โดย {book.author}</p>
       <div className="mb-2">
-        {Rating(5)}
+        {Rating(book.rating)}
       </div>
       <div className="flex justify-between items-center mt-auto">
-        <span className="text-blue-600 font-medium">฿ 320</span>
-        <span className="text-gray-500 text-sm">300 หน้า</span>
+        <span className="text-blue-600 font-medium">฿ {book.price}</span>
+        <span className="text-gray-500 text-sm">{book.pages} หน้า</span>
       </div>
     </div>
   );
